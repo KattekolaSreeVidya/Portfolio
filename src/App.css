@@ -1,0 +1,358 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  background-color: #121212;
+  height: 100%; /* Ensure body takes up full height */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Main App Container */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the root takes at least the full height of the viewport */
+}
+
+/* Header Styling */
+header {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 1.6em; /* Reduced font size */
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.85em; /* Reduced font size */
+  transition: color 0.3s ease;
+  padding: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+nav ul li a:hover {
+  color: #4CAF50;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  margin-top: auto; /* Push footer to the bottom of the page */
+}
+
+footer p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.social-links {
+  margin-top: 10px;
+}
+
+.social-links a {
+  color: #4CAF50;
+  text-decoration: none;
+  font-size: 1em; /* Adjusted size */
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #ffffff;
+}
+
+/* Home Section */
+#home {
+  text-align: center;
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: calc(100vh - 80px); /* Adjust as needed */
+}
+
+#home .intro {
+  animation: fade_up 1s ease-in-out;
+  flex: 1;
+  text-align: left;
+}
+
+#home h1 {
+  font-size: 2.5rem; /* Reduced font size */
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+#home p {
+  font-size: 1rem; /* Reduced font size */
+  color: #cccccc;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.profile-image {
+  flex: 1;
+  text-align: right;
+}
+
+.profile-image img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* About Section */
+#about {
+  padding: 4rem 2rem;
+  background-color: #1e1e1e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#about h2 {
+  font-size: 2.2rem; /* Reduced font size */
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  animation: fade_up 1s ease-in-out;
+}
+
+#about p {
+  font-size: 1rem; /* Reduced font size */
+  color: #cccccc;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  text-align: center;
+  position: relative;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#about p::before {
+  content: "✦"; /* Decorative element */
+  font-size: 2rem;
+  color: #4CAF50;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -2rem;
+}
+
+#about .about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+#about .about-content img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 5px solid #4CAF50;
+}
+
+#about .about-content h3 {
+  font-size: 1.8rem; /* Reduced font size */
+  color: #ffffff;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+}
+
+#about .about-content p {
+  font-size: 1rem; /* Reduced font size */
+  color: #cccccc;
+  max-width: 600px;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Project Categories Styling */
+.project-category {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.project-category h3 {
+  font-size: 1.8rem; /* Reduced font size */
+  color: #4CAF50;
+  margin-bottom: 2rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+}
+
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* Project Card */
+.project-card {
+  border-radius: 8px;
+  padding: 2rem;
+  width: 350px;
+  text-align: center;
+  background-color: #2a2a2a;  /* Light color background for the card */
+  border: 1px solid #4CAF50; /* Light green outline for visibility */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-card:focus,
+.project-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px);
+}
+
+.project-card h3 {
+  margin: 0 0 1rem;
+  color: #ffffff;
+  font-size: 1.4rem; /* Reduced font size */
+}
+
+.project-card p {
+  color: #cccccc;
+  margin-bottom: 1.5rem;
+  font-size: 1rem; /* Reduced font size */
+}
+
+.project-card a {
+  text-decoration: none;
+  color: #4CAF50;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.project-card a:hover {
+  color: #ffffff;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .project-card {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+/* Contact Section */
+#contact {
+  padding: 4rem 2rem;
+  background-color: #1e1e1e;
+}
+
+#contact h2 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-size: 1.1em;
+  color: #ffffff;
+}
+
+input, textarea {
+  padding: 10px;
+  font-size: 1em;
+  background-color: #333;
+  border: 2px solid #444;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
