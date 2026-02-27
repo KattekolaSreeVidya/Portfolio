@@ -1,12 +1,27 @@
 import React from "react";
 
+function ProjectCard({ project, onClick }) {
+  const handleCardClick = () => {
+    if (onClick) {
+      onClick();
+    }
+  };
 
-function ProjectCard({ project }) {
   return (
-    <div className="project-card">
+    <div
+      className={`project-card ${onClick ? "is-clickable" : ""}`}
+      onClick={handleCardClick}
+    >
       <h3>{project.title}</h3>
       <p>{project.description}</p>
-      <a href={project.link} target="_blank" rel="noopener noreferrer">View Project</a>
+      <a
+        href={project.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={(e) => e.stopPropagation()}
+      >
+        View Project
+      </a>
     </div>
   );
 }
